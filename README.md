@@ -62,6 +62,13 @@ Over the past year I've shipped **10+ production products** across PropTech, AI-
       <code>HTML · Tailwind · Vanilla · Static</code>
     </td>
   </tr>
+  <tr>
+    <td colspan="2">
+      <h3>📚 <a href="https://github.com/SergeyKrin9/awesome-claude-code-workflows">awesome-claude-code-workflows</a></h3>
+      <p>Curated list of methodologies, MCP servers, skills, templates, and tools for shipping production software with Claude Code. CC0.</p>
+      <code>Awesome List · Claude Code · MCP · Methodology</code>
+    </td>
+  </tr>
 </table>
 
 ---
