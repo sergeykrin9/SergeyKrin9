@@ -64,7 +64,12 @@ Over the past year I've shipped **10+ production products** across PropTech, AI-
     </td>
   </tr>
   <tr>
-    <td colspan="2">
+    <td width="50%">
+      <h3>⚡ <a href="https://github.com/SergeyKrin9/nvidia-nim-cascade">nvidia-nim-cascade</a></h3>
+      <p>9-model NVIDIA NIM fallback chain. Same OpenAI-compatible API, ~360 RPM at $0/month. Drop-in replacement for OpenAI fallback. Production-tested over 6 months.</p>
+      <code>Python · NVIDIA NIM · LLM · Cost Optimization</code>
+    </td>
+    <td width="50%">
       <h3>📚 <a href="https://github.com/SergeyKrin9/awesome-claude-code-workflows">awesome-claude-code-workflows</a></h3>
       <p>Curated list of methodologies, MCP servers, skills, templates, and tools for shipping production software with Claude Code. CC0.</p>
       <code>Awesome List · Claude Code · MCP · Methodology</code>
