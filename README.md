@@ -13,6 +13,7 @@
 <!-- Social / contact badges -->
 <p align="center">
   <a href="https://putksebe.su/cv"><img src="https://img.shields.io/badge/Portfolio-putksebe.su%2Fcv-c08a52?style=for-the-badge&logo=safari&logoColor=white" /></a>
+  <a href="https://www.linkedin.com/in/sergeykrin"><img src="https://img.shields.io/badge/LinkedIn-sergeykrin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
   <a href="mailto:sergeykrin98@gmail.com"><img src="https://img.shields.io/badge/Email-sergeykrin98%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
   <a href="https://github.com/SergeyKrin9"><img src="https://img.shields.io/badge/GitHub-SergeyKrin9-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
   <img src="https://komarev.com/ghpvc/?username=SergeyKrin9&color=c08a52&style=for-the-badge&label=Profile+views" />
@@ -135,6 +136,7 @@ Over the past year I've shipped **10+ production products** across PropTech, AI-
 
 <p>
   <strong>Email:</strong> <a href="mailto:sergeykrin98@gmail.com">sergeykrin98@gmail.com</a> &nbsp;·&nbsp;
+  <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sergeykrin">/in/sergeykrin</a> &nbsp;·&nbsp;
   <strong>Portfolio:</strong> <a href="https://putksebe.su/cv">putksebe.su/cv</a>
 </p>
 
