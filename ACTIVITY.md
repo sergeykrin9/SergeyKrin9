@@ -7,3 +7,4 @@ Daily 'what I shipped' feed.
 - **2026-05-29** — Memory leak = burnout → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7466201715885920256/)
 - **2026-05-30** — MCP per painful workflow → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7466565838477635584/)
 - **2026-05-31** — Ограничивающее убеждение = баг в проде → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7466926479637942272/)
+- **2026-06-01** — 47 broker interviews → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7467288887015444480/)
