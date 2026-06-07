@@ -13,3 +13,4 @@ Daily 'what I shipped' feed.
 - **2026-06-04** — Pre-deploy safety guard (after a real incident) → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7468376047642820608/)
 - **2026-06-05** — You don't have an energy problem, you have a rate-limit problem → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7468742271316844544/)
 - **2026-06-06** — MCP для русского рынка — ниша, которую никто не закрыл → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7469100807255375872/)
+- **2026-06-07** — Прод ты дебажишь по логам. Себя — на ощупь. Почему? → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7469467035186409473/)
