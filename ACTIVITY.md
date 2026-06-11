@@ -17,3 +17,4 @@ Daily 'what I shipped' feed.
 - **2026-06-08** — Real-time 'chess board' from Excel chaos → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7469828555385012224/)
 - **2026-06-09** — "New year, new me" is a big-bang rewrite. Those fail. → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7470190973952802816/)
 - **2026-06-10** — Forward-Deployed Engineer in practice → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7470552036745609217/)
+- **2026-06-11** — «Деньги — это энергия» — самая дорогая ложь, что тебе продали → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7470912766187319296/)
