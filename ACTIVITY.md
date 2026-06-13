@@ -19,3 +19,4 @@ Daily 'what I shipped' feed.
 - **2026-06-10** — Forward-Deployed Engineer in practice → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7470552036745609217/)
 - **2026-06-11** — «Деньги — это энергия» — самая дорогая ложь, что тебе продали → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7470912766187319296/)
 - **2026-06-12** — Russian-market MCP — niche I'm filling → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7471278417284337664/)
+- **2026-06-13** — Режим CTO — самое сильное правило в работе с ИИ → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7471637530300334080/)
