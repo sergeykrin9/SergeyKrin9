@@ -22,3 +22,4 @@ Daily 'what I shipped' feed.
 - **2026-06-13** — Режим CTO — самое сильное правило в работе с ИИ → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7471637530300334080/)
 - **2026-06-14** — Lead scoring from public signals, $0 ad spend → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7471999933840007169/)
 - **2026-06-15** — Брокеры зарубежной недвижки тонут в 320 чатах → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7472365122930257920/)
+- **2026-06-16** — Boris Cherny iteration loop adapted for AI → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7472725882441211904/)
