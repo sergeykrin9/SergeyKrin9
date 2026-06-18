@@ -24,3 +24,4 @@ Daily 'what I shipped' feed.
 - **2026-06-15** — Брокеры зарубежной недвижки тонут в 320 чатах → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7472365122930257920/)
 - **2026-06-16** — Boris Cherny iteration loop adapted for AI → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7472725882441211904/)
 - **2026-06-17** — A RAG chat that answers 80% so the broker handles 20% → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7473090736037486593/)
+- **2026-06-18** — CTO mode is the highest-impact feedback rule → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7473452698118275073/)
