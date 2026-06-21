@@ -26,3 +26,4 @@ Daily 'what I shipped' feed.
 - **2026-06-17** — A RAG chat that answers 80% so the broker handles 20% → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7473090736037486593/)
 - **2026-06-18** — CTO mode is the highest-impact feedback rule → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7473452698118275073/)
 - **2026-06-20** — Client rooms: signal instead of guessing → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7474177123616837632/)
+- **2026-06-21** — 10+ products in 8 months — the methodology behind it → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7474540387647287296/)
