@@ -28,3 +28,4 @@ Daily 'what I shipped' feed.
 - **2026-06-20** — Client rooms: signal instead of guessing → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7474177123616837632/)
 - **2026-06-21** — 10+ products in 8 months — the methodology behind it → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7474540387647287296/)
 - **2026-06-22** — Telegram Stars — недооценённый способ монетизации → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7474899034244034560/)
+- **2026-06-23** — Telegram Stars payments for Claude-built bots → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7475261414853529600/)
