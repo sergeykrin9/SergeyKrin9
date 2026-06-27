@@ -31,3 +31,4 @@ Daily 'what I shipped' feed.
 - **2026-06-23** — Telegram Stars payments for Claude-built bots → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7475261414853529600/)
 - **2026-06-24** — An AI catalog cost $50K/mo two years ago. We run it for ~$200 → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7475623789767106560/)
 - **2026-06-25** — Sharp tradeoff: which AI workflow to skip → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7475986196624470016/)
+- **2026-06-27** — Skills as named workflows → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7476711838668206080/)
