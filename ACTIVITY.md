@@ -34,3 +34,4 @@ Daily 'what I shipped' feed.
 - **2026-06-27** — Skills as named workflows → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7476711838668206080/)
 - **2026-06-28** — I automated my own job-search content engine → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7477076134950760448/)
 - **2026-07-03** — Сказка про «One-Person Billion Dollar Company»: почему 100 AI-агентов  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7478524407477366784/)
+- **2026-07-03** — Все прочитали новость про Lindy одинаково: «Claude дорогой, DeepSeek д → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7478886904793300992/)
