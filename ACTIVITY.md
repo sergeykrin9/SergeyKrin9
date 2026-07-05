@@ -36,3 +36,4 @@ Daily 'what I shipped' feed.
 - **2026-07-03** — Сказка про «One-Person Billion Dollar Company»: почему 100 AI-агентов  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7478524407477366784/)
 - **2026-07-03** — Все прочитали новость про Lindy одинаково: «Claude дорогой, DeepSeek д → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7478886904793300992/)
 - **2026-07-04** — Сказка про «One-Person Billion Dollar Company»: почему 100 AI-агентов  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7479247683686150144/)
+- **2026-07-05** — Твоя обёртка над ChatGPT — это не бизнес-модель и не конкурентное преи → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7479610062856945664/)
