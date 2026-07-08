@@ -39,3 +39,4 @@ Daily 'what I shipped' feed.
 - **2026-07-05** — Твоя обёртка над ChatGPT — это не бизнес-модель и не конкурентное преи → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7479610062856945664/)
 - **2026-07-06** — Питч-дек на 30 слайдов с анимацией не заменит одного реального платяще → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7479974266482913280/)
 - **2026-07-07** — Смерть классического MVP: почему правило Эрика Риса «сделай быстро и к → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7480334842925064192/)
+- **2026-07-08** — Иллюзия ИИ-инноваций: генеративный чат-бот к туалетной бумаге → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7480697235337289728/)
