@@ -42,3 +42,4 @@ Daily 'what I shipped' feed.
 - **2026-07-08** — Иллюзия ИИ-инноваций: генеративный чат-бот к туалетной бумаге → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7480697235337289728/)
 - **2026-07-09** — Проклятие метрик тщеславия: 10,000 лайков и кассовый разрыв → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7481059616236261376/)
 - **2026-07-10** — История — это не факты. Это динамический контекст в RAG-базе Матери Бо → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7481422854081642496/)
+- **2026-07-11** — Кладбище фич (Feature Bloat): как продакты убивают UX → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7481784399114498048/)
