@@ -45,3 +45,4 @@ Daily 'what I shipped' feed.
 - **2026-07-11** — Кладбище фич (Feature Bloat): как продакты убивают UX → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7481784399114498048/)
 - **2026-07-12** — B2B-продажи в эпоху ИИ-спама: война роботов против роботов → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7482148355733606400/)
 - **2026-07-13** — Ты общаешься не с искусственным интеллектом. Ты разговариваешь с фракт → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7482512307810557952/)
+- **2026-07-14** — ИИ вместо стратегии: почему OpenAI API — это не Moat → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7482871743674597376/)
