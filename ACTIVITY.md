@@ -47,3 +47,4 @@ Daily 'what I shipped' feed.
 - **2026-07-13** — Ты общаешься не с искусственным интеллектом. Ты разговариваешь с фракт → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7482512307810557952/)
 - **2026-07-14** — ИИ вместо стратегии: почему OpenAI API — это не Moat → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7482871743674597376/)
 - **2026-07-15** — Ловушка Freemium: почему 10,000 бесплатных пользователей угробят твою  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7483233947418550273/)
+- **2026-07-16** — Архитектурный мазохизм: почему переписывание MVP на Rust и Kubernetes  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7483596329466634240/)
