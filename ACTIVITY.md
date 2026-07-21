@@ -51,3 +51,4 @@ Daily 'what I shipped' feed.
 - **2026-07-17** — Иллюзия Enterprise-партнерства: как гигантская корпорация будет 9 меся → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7483958723518849024/)
 - **2026-07-18** — Галлюцинации фаундера: питч-дек на 30 слайдов vs 1 платящий клиент → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7484322016481726464/)
 - **2026-07-19** — Смерть классического MVP: почему «из говна и палок» больше не работает → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7484686413553369088/)
+- **2026-07-21** — Парад гуманоидов: как робот с 88 степенями свободы и 13 000 предзаказо → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7485163659447517184/)
