@@ -53,3 +53,4 @@ Daily 'what I shipped' feed.
 - **2026-07-19** — Смерть классического MVP: почему «из говна и палок» больше не работает → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7484686413553369088/)
 - **2026-07-21** — Парад гуманоидов: как робот с 88 степенями свободы и 13 000 предзаказо → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7485163659447517184/)
 - **2026-07-21** — Увольнение по сценарию «ИИ уже всё сделает» 🤖 → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7485427206970580992/)
+- **2026-07-22** — Самый дешёвый инсайдер в твоей компании: как ты выдал ИИ-агенту ключи  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7485788072987516928/)
