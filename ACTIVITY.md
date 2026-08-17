@@ -56,3 +56,4 @@ Daily 'what I shipped' feed.
 - **2026-07-22** — Самый дешёвый инсайдер в твоей компании: как ты выдал ИИ-агенту ключи  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7485788072987516928/)
 - **2026-07-24** — Гуманоидный пузырь: как в роботов за полгода залили $18,8 млрд — больш → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7486510545345609728/)
 - **2026-07-26** — Финансовая карусель ИИ: как нефть Саудовской Аравии оплачивает твою «в → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7486876659825127425/)
+- **2026-08-17** — The Markup Dealer: an AI coding startup just 4x'd its price tag in 11  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7495060818615676928/)
