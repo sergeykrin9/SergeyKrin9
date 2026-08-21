@@ -1,12 +1,12 @@
 <!-- Hero banner -->
 <a href="https://putksebe.su/cv">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1a1d,50:c08a52,100:1a1a1d&height=220&section=header&text=Sergey%20Krinitsyn&fontSize=58&fontColor=f5f1e8&fontAlignY=38&desc=AI%20Product%20Engineer%20·%20React%20·%20Python%20·%20LLM&descSize=18&descAlignY=62&descAlign=50" alt="header" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1a1d,50:c08a52,100:1a1a1d&height=220&section=header&text=Sergey%20Grin&fontSize=58&fontColor=f5f1e8&fontAlignY=38&desc=AI%20Product%20Engineer%20·%20React%20·%20Python%20·%20LLM&descSize=18&descAlignY=62&descAlign=50" alt="header" />
 </a>
 
 <!-- Typing SVG: rotates 4 lines -->
 <p align="center">
   <a href="https://putksebe.su/cv">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=3200&pause=900&color=C08A52&center=true&vCenter=true&width=720&lines=AI+Product+Engineer+%E2%80%A2+Building+at+the+LLM+%2B+frontend+%2B+ops+intersection;React+%2B+FastAPI+%2B+Firebase+%2B+ffmpeg+%2B+15+MCP+servers;Shipped+10%2B+products+across+PropTech%2C+AI+content%2C+growth+automation;Open+to+remote+%E2%80%94+UTC%2B7+%E2%80%A2+EU%2FRU+timezone+overlap" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=3200&pause=900&color=C08A52&center=true&vCenter=true&width=720&lines=AI+Product+Engineer+%E2%80%A2+Building+at+the+LLM+%2B+frontend+%2B+ops+intersection;React+%2B+FastAPI+%2B+Firebase+%2B+ffmpeg+%2B+15+MCP+servers;Shipped+10%2B+products+across+PropTech%2C+AI+content%2C+growth+automation;Open-sourcing+the+workflow%3A+verify-by-failure+%E2%80%A2+agnis-workflow+%E2%80%A2+mcp-servers" alt="Typing SVG" />
   </a>
 </p>
 
@@ -40,40 +40,47 @@ Over the past year I've shipped **10+ production products** across PropTech, AI-
 
 <table>
   <tr>
-    <td width="50%">
-      <h3>🧠 <a href="https://github.com/SergeyKrin9/agnis-workflow">agnis-workflow</a></h3>
-      <p>Production-grade Claude Code setup for solo product engineers. Persistent memory + typed knowledge + CTO mode + iteration loops. Used on 5+ shipped products.</p>
-      <code>Claude Code · MCP · Methodology · Templates</code>
-    </td>
-    <td width="50%">
-      <h3>🎬 <a href="https://github.com/SergeyKrin9/broker-reels">broker-reels</a></h3>
-      <p>AI text-to-video pipeline for real estate. Python + ffmpeg + LLM. Broker picks a unit → 30–60 sec → finished MP4 ready to publish. Replaces an SMM specialist.</p>
-      <code>Python · ffmpeg · NVIDIA Llama · Flask · Firebase</code>
-    </td>
+  <td width="50%">
+        <h3>🛡 <a href="https://github.com/sergeykrin9/verify-by-failure">verify-by-failure</a></h3>
+        <p>An eight-step working loop for coding agents on production systems. A green test proves almost nothing — verify by breaking the thing. Every rule paid for by a real outage, including a watchdog that restarted a live service blindly for weeks while returning exit code 0.</p>
+        <code>Claude Code · Skills · Reliability · Methodology</code>
+      </td>
+  <td width="50%">
+        <h3>🧠 <a href="https://github.com/SergeyKrin9/agnis-workflow">agnis-workflow</a></h3>
+        <p>Production-grade Claude Code setup for solo product engineers. Persistent memory + typed knowledge + CTO mode + iteration loops. Used on 5+ shipped products.</p>
+        <code>Claude Code · MCP · Methodology · Templates</code>
+      </td>
   </tr>
   <tr>
-    <td width="50%">
-      <h3>🔌 <a href="https://github.com/SergeyKrin9/mcp-servers">mcp-servers</a></h3>
-      <p>7 custom MCP servers wiring Yandex.Direct, Yandex.Webmaster, GSC, YouTube, VK, Telegram, Click.ru into the Claude tool loop. The only unified RU-market MCP toolkit.</p>
-      <code>MCP · Python · Yandex APIs · Google APIs · VK · Telegram</code>
-    </td>
-    <td width="50%">
-      <h3>🪞 <a href="https://github.com/SergeyKrin9/portfolio">portfolio</a></h3>
-      <p>This personal site. Single-page, dark + warm amber, no build step. Tailwind via CDN, 33 KB. Live: <a href="https://putksebe.su/cv">putksebe.su/cv</a>.</p>
-      <code>HTML · Tailwind · Vanilla · Static</code>
-    </td>
+  <td width="50%">
+        <h3>🎬 <a href="https://github.com/SergeyKrin9/broker-reels">broker-reels</a></h3>
+        <p>AI text-to-video pipeline for real estate. Python + ffmpeg + LLM. Broker picks a unit → 30–60 sec → finished MP4 ready to publish. Replaces an SMM specialist.</p>
+        <code>Python · ffmpeg · NVIDIA Llama · Flask · Firebase</code>
+      </td>
+  <td width="50%">
+        <h3>🔌 <a href="https://github.com/SergeyKrin9/mcp-servers">mcp-servers</a></h3>
+        <p>7 custom MCP servers wiring Yandex.Direct, Yandex.Webmaster, GSC, YouTube, VK, Telegram, Click.ru into the Claude tool loop. The only unified RU-market MCP toolkit.</p>
+        <code>MCP · Python · Yandex APIs · Google APIs · VK · Telegram</code>
+      </td>
   </tr>
   <tr>
-    <td width="50%">
-      <h3>⚡ <a href="https://github.com/SergeyKrin9/nvidia-nim-cascade">nvidia-nim-cascade</a></h3>
-      <p>9-model NVIDIA NIM fallback chain. Same OpenAI-compatible API, ~360 RPM at $0/month. Drop-in replacement for OpenAI fallback. Production-tested over 6 months.</p>
-      <code>Python · NVIDIA NIM · LLM · Cost Optimization</code>
-    </td>
-    <td width="50%">
-      <h3>📚 <a href="https://github.com/SergeyKrin9/awesome-claude-code-workflows">awesome-claude-code-workflows</a></h3>
-      <p>Curated list of methodologies, MCP servers, skills, templates, and tools for shipping production software with Claude Code. CC0.</p>
-      <code>Awesome List · Claude Code · MCP · Methodology</code>
-    </td>
+  <td width="50%">
+        <h3>🪞 <a href="https://github.com/SergeyKrin9/portfolio">portfolio</a></h3>
+        <p>This personal site. Single-page, dark + warm amber, no build step. Tailwind via CDN, 33 KB. Live: <a href="https://putksebe.su/cv">putksebe.su/cv</a>.</p>
+        <code>HTML · Tailwind · Vanilla · Static</code>
+      </td>
+  <td width="50%">
+        <h3>⚡ <a href="https://github.com/SergeyKrin9/nvidia-nim-cascade">nvidia-nim-cascade</a></h3>
+        <p>9-model NVIDIA NIM fallback chain. Same OpenAI-compatible API, ~360 RPM at $0/month. Drop-in replacement for OpenAI fallback. Production-tested over 6 months.</p>
+        <code>Python · NVIDIA NIM · LLM · Cost Optimization</code>
+      </td>
+  </tr>
+  <tr>
+  <td width="50%">
+        <h3>📚 <a href="https://github.com/SergeyKrin9/awesome-claude-code-workflows">awesome-claude-code-workflows</a></h3>
+        <p>Curated list of methodologies, MCP servers, skills, templates, and tools for shipping production software with Claude Code. CC0.</p>
+        <code>Awesome List · Claude Code · MCP · Methodology</code>
+      </td>
   </tr>
 </table>
 
