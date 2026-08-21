@@ -60,3 +60,4 @@ Daily 'what I shipped' feed.
 - **2026-08-18** — 🤖 Железо не врёт: китайцы отгрузили 97% всех гуманоидов планеты, пока  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7495574044595933184/)
 - **2026-08-19** — The human rollback: 55% of leaders shipped AI instead of employees wit → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7495932623194632194/)
 - **2026-08-20** — The memory tax: a RAM kit got 4x more expensive in 11 months, because  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7496295024087842816/)
+- **2026-08-21** — 🐋 The pedigree round: a startup with no product and no revenue raised  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7496657410573352960/)
