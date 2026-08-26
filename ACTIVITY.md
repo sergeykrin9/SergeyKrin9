@@ -65,3 +65,4 @@ Daily 'what I shipped' feed.
 - **2026-08-23** — The rescue bill: AI learned to write code that runs. It never learned  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7497382188225585152/)
 - **2026-08-24** — Margin on loan: how a price war between two labs handed you a gross ma → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7497744575378231296/)
 - **2026-08-25** — The toll booth tax: 50 people, zero models of their own, sold for $8B  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498108602893672448/)
+- **2026-08-26** — The regulatory moat: how a €15M fine protects OpenAI from you, not you → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498470175923503105/)
