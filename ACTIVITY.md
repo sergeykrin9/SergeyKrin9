@@ -66,3 +66,4 @@ Daily 'what I shipped' feed.
 - **2026-08-24** — Margin on loan: how a price war between two labs handed you a gross ma → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7497744575378231296/)
 - **2026-08-25** — The toll booth tax: 50 people, zero models of their own, sold for $8B  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498108602893672448/)
 - **2026-08-26** — The regulatory moat: how a €15M fine protects OpenAI from you, not you → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498470175923503105/)
+- **2026-08-27** — The world's top humanoid robot maker just went public at roughly 1,300 → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498835019876970496/)
