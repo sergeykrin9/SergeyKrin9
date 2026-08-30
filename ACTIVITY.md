@@ -68,3 +68,4 @@ Daily 'what I shipped' feed.
 - **2026-08-26** — The regulatory moat: how a €15M fine protects OpenAI from you, not you → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498470175923503105/)
 - **2026-08-27** — The world's top humanoid robot maker just went public at roughly 1,300 → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7498835019876970496/)
 - **2026-08-28** — One floor down: OpenAI went from software to silicon in 16 months. You → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7499194122969182208/)
+- **2026-08-30** — The average temperature of AI: whales pay $7,400 per employee, the med → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7499922228780740608/)
