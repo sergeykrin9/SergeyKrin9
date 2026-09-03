@@ -72,3 +72,4 @@ Daily 'what I shipped' feed.
 - **2026-08-31** — The construction that isn't there: how $130B of data centers got stuck → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7500281294015205376/)
 - **2026-09-01** — Quality control for gods: a company that invents nothing and just brea → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7500643664918949888/)
 - **2026-09-02** — Your customer is not shopping anymore. He is building it himself, with → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7501006069318598656/)
+- **2026-09-03** — Three billion dollars for the word "OS": how a support bot renamed its → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7501368794045583360/)
