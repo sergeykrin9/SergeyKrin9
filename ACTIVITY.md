@@ -74,3 +74,4 @@ Daily 'what I shipped' feed.
 - **2026-09-02** — Your customer is not shopping anymore. He is building it himself, with → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7501006069318598656/)
 - **2026-09-03** — Three billion dollars for the word "OS": how a support bot renamed its → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7501368794045583360/)
 - **2026-09-05** — The landlord economy: a former crypto miner tripled its price tag in 1 → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7502095137955713026/)
+- **2026-09-06** — A compiler instead of a boss: how AI closed Fermat's Last Theorem in 1 → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7502455613176676353/)
