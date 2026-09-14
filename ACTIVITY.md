@@ -77,3 +77,4 @@ Daily 'what I shipped' feed.
 - **2026-09-06** — A compiler instead of a boss: how AI closed Fermat's Last Theorem in 1 → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7502455613176676353/)
 - **2026-09-07** — The reverse gold rush: a company where humans fold laundry instead of  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7502818004112445440/)
 - **2026-09-08** — The consultant with a sales quota: your free AI advisor became an ad s → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503180393785888768/)
+- **2026-09-14** — You are not selling a robot. You are selling the year 2040. → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505357043487363072/)
