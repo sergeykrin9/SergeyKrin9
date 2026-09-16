@@ -79,3 +79,4 @@ Daily 'what I shipped' feed.
 - **2026-09-08** — The consultant with a sales quota: your free AI advisor became an ad s → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7503180393785888768/)
 - **2026-09-14** — You are not selling a robot. You are selling the year 2040. → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505357043487363072/)
 - **2026-09-15** — Dying with money in the bank: startups in 2026 shut down with $11,900  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7505717111496011777/)
+- **2026-09-16** — The failed taste test: a company burning $205B on its own AI just let  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506079499659284480/)
