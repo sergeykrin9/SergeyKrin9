@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>B8Estate · Трекер задач</title>
+<style>
+:root{
+  --navy:#06243a; --navy2:#0b3354; --teal:#0f766e; --blue:#2563eb;
+  --bg:#f4f6f9; --panel:#ffffff; --text:#0b2238; --muted:#64748b;
+  --line:#dde4ec; --soft:#eef2f7;
+  --danger:#b91c1c; --warn:#b45309; --ok:#15803d; --violet:#6d28d9;
+  --shadow:0 10px 32px rgba(6,36,58,.08);
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font:14px/1.45 Inter,Montserrat,system-ui,Arial,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--blue);text-decoration:none}
+
+.app{display:grid;grid-template-columns:264px 1fr;min-height:100vh}
+
+/* ---------- sidebar ---------- */
+.sidebar{background:var(--navy);color:#dce8f2;padding:20px 14px;position:sticky;top:0;height:100vh;overflow:auto;display:flex;flex-direction:column;gap:4px}
+.brand{display:flex;align-items:center;gap:11px;margin-bottom:16px;padding:0 4px}
+.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#0f766e,#2563eb);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+.brand h1{font-size:16px;margin:0;color:#fff;letter-spacing:.02em}
+.brand p{margin:2px 0 0;color:#8fa8bc;font-size:11px}
+.roleBox{background:var(--navy2);border-radius:14px;padding:12px;margin-bottom:12px}
+.roleBox label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#8fa8bc;margin-bottom:7px}
+.roleBox select{width:100%;padding:9px 10px;border:1px solid #1d4565;border-radius:10px;background:#0a2c47;color:#fff}
+.roleHint{font-size:11px;color:#8fa8bc;line-height:1.4;margin-top:8px}
+.navTitle{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#5f7e96;margin:12px 8px 6px}
+.nav button{width:100%;border:0;background:transparent;color:#c9d9e6;padding:10px 12px;border-radius:12px;text-align:left;display:flex;gap:10px;align-items:center;cursor:pointer}
+.nav button:hover{background:#0a2c47}
+.nav button.active{background:#fff;color:var(--navy);font-weight:700}
+.nav .count{margin-left:auto;font-size:11px;opacity:.85;border:1px solid currentColor;border-radius:99px;padding:1px 7px;min-width:24px;text-align:center}
+.sideFoot{margin-top:auto;font-size:11px;color:#5f7e96;padding:10px 6px;border-top:1px solid #123a5c;line-height:1.6}
+
+/* ---------- main / header ---------- */
+.main{padding:0 26px 70px;overflow:auto}
+.topbar{position:sticky;top:0;z-index:10;background:linear-gradient(var(--bg) 82%,transparent);padding:20px 0 12px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.topbar h2{margin:0;font-size:24px;letter-spacing:-.02em;color:var(--navy)}
+.topbar .sub{flex-basis:100%;margin:-4px 0 0;color:var(--muted);font-size:12.5px;max-width:860px}
+.spacer{flex:1}
+.search{position:relative}
+.search input{width:240px;border:1px solid var(--line);border-radius:12px;padding:9px 12px 9px 32px;background:#fff}
+.search:before{content:"⌕";position:absolute;left:11px;top:8px;color:var(--muted);font-size:15px}
+.btn{border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 13px;cursor:pointer;display:inline-flex;gap:7px;align-items:center;white-space:nowrap}
+.btn:hover{box-shadow:0 4px 14px rgba(6,36,58,.10)}
+.btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn.accent{background:var(--teal);color:#fff;border-color:var(--teal)}
+.btn.danger{color:var(--danger);border-color:#f3c5c5}
+.btn.small{padding:5px 9px;border-radius:9px;font-size:12px}
+.btn.full{width:100%;justify-content:center}
+
+/* ---------- generic ---------- */
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+.panel h3{margin:0 0 10px;color:var(--navy);font-size:16px}
+.muted{color:var(--muted)}
+.smallText{font-size:12px;color:var(--muted);line-height:1.45}
+.empty{padding:20px;border:1.5px dashed var(--line);border-radius:14px;color:var(--muted);text-align:center;background:#fbfcfe;font-size:12.5px}
+.badge{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:2.5px 8px;background:var(--soft);color:var(--muted);font-size:11px;border:1px solid var(--line);font-weight:600}
+.badge.p0{background:#fee2e2;color:#991b1b;border-color:#fecaca}
+.badge.p1{background:#fef3c7;color:#92400e;border-color:#fde68a}
+.badge.p2{background:#dbeafe;color:#1e40af;border-color:#bfdbfe}
+.badge.inbox{background:#f1f5f9;color:#475569}
+.badge.ready{background:#e0f2fe;color:#075985;border-color:#bae6fd}
+.badge.progress{background:#ccfbf1;color:#115e59;border-color:#99f6e4}
+.badge.review{background:#ede9fe;color:#5b21b6;border-color:#ddd6fe}
+.badge.feedback{background:#ffedd5;color:#9a3412;border-color:#fed7aa}
+.badge.done{background:#dcfce7;color:#166534;border-color:#bbf7d0}
+.badge.overdue{background:#fee2e2;color:#b91c1c;border-color:#fecaca}
+.badge.soon{background:#fef3c7;color:#92400e;border-color:#fde68a}
+.avatar{width:24px;height:24px;border-radius:50%;background:#4b5563;color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;border:2px solid #fff;flex:none}
+.avatar.alina{background:#0f766e}.avatar.sergey{background:#1d4ed8}.avatar.love{background:#be185d}.avatar.team{background:#4b5563}
+.people{display:inline-flex;align-items:center}
+.people .avatar+.avatar{margin-left:-7px}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:2px 0 16px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;cursor:pointer;color:var(--muted);font-size:12.5px}
+.chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* ---------- cards ---------- */
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px;cursor:pointer;box-shadow:0 2px 10px rgba(6,36,58,.04);transition:transform .08s,border-color .08s}
+.card:hover{border-color:#a9bccd;transform:translateY(-1px)}
+.card.dragging{opacity:.45}
+.cardTitle{font-weight:750;color:var(--navy);line-height:1.3;margin-bottom:7px}
+.cardMeta{display:flex;gap:5px;flex-wrap:wrap;margin:7px 0 0}
+.card p{margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.45}
+.cardFooter{display:flex;justify-content:space-between;align-items:center;margin-top:10px;color:var(--muted);font-size:11.5px;gap:8px}
+.due{display:inline-flex;align-items:center;gap:4px}
+.due.overdue{color:var(--danger);font-weight:700}
+.due.soon{color:var(--warn);font-weight:700}
+.checkMini{font-size:11px;color:var(--muted)}
+.goalTag{display:block;margin-top:7px;font-size:11.5px;color:var(--teal);font-weight:600}
+
+/* ---------- my cabinet ---------- */
+.kpiStrip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:0 0 16px}
+.kpiCard{position:relative;border-radius:18px;padding:15px;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff;overflow:hidden;cursor:default}
+.kpiCard:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--c,#0f766e)}
+.kpiCard .label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--muted)}
+.kpiCard .num{font-size:31px;font-weight:900;color:var(--navy);margin-top:9px;line-height:1}
+.kpiCard .hint{font-size:11.5px;color:var(--muted);margin-top:7px}
+.myGrid{display:grid;grid-template-columns:repeat(4,minmax(250px,1fr));gap:13px;align-items:start}
+.mySection{border-radius:18px;border:1.5px solid var(--line);background:#fff;min-height:340px;overflow:hidden}
+.mySection h3{margin:0;padding:14px 14px 4px;font-size:16px;display:flex;align-items:center;gap:8px}
+.mySection h3:before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.mySection .hintLine{margin:0 14px 11px;color:var(--muted);font-size:11.5px;line-height:1.4;min-height:30px}
+.mySection .card,.mySection .empty{margin:0 11px 10px}
+.mySection.cTasks{border-color:#99e3cf;background:linear-gradient(180deg,#ecfdf5 0,#fff 120px)}.mySection.cTasks h3{color:#047857}
+.mySection.cReview{border-color:#d6ccf8;background:linear-gradient(180deg,#f5f3ff 0,#fff 120px)}.mySection.cReview h3{color:#6d28d9}
+.mySection.cCreated{border-color:#b8d4fb;background:linear-gradient(180deg,#eff6ff 0,#fff 120px)}.mySection.cCreated h3{color:#1d4ed8}
+.mySection.cDone{border-color:#b3ecc4;background:linear-gradient(180deg,#f0fdf4 0,#fff 120px)}.mySection.cDone h3{color:#15803d}
+.mySection.cDone .card{opacity:.9}
+
+/* ---------- board ---------- */
+.board{display:flex;gap:13px;overflow:auto;padding-bottom:14px;align-items:flex-start}
+.column{min-width:272px;width:272px;background:#eef1f6;border:1px solid var(--line);border-radius:16px;padding:9px;max-height:calc(100vh - 250px);overflow:auto;flex:none}
+.column.dropReady{outline:2px dashed var(--teal);outline-offset:-2px;background:#e7f6f4}
+.columnHeader{display:flex;justify-content:space-between;align-items:center;margin:3px 5px 10px;font-weight:800;color:var(--navy);font-size:13px}
+.columnHeader .cnt{font-size:11px;color:var(--muted);font-weight:600;background:#fff;border:1px solid var(--line);border-radius:99px;padding:1px 8px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:#94a3b8}
+.dot.inbox{background:#94a3b8}.dot.ready{background:#0284c7}.dot.progress{background:#0f766e}.dot.review{background:#7c3aed}.dot.feedback{background:#ea580c}.dot.done{background:#16a34a}
+
+/* ---------- goals ---------- */
+.goalBox{border:1.5px solid var(--line);border-radius:18px;background:#fff;margin:10px 0;overflow:hidden;box-shadow:var(--shadow)}
+.goalBox.open{border-color:#9ccbc6}
+.goalHead{display:grid;grid-template-columns:30px 1.5fr .7fr .9fr auto;gap:12px;align-items:center;padding:13px;cursor:pointer;background:linear-gradient(90deg,#f0fdfa,#fff)}
+.goalHead:hover{background:#ebf6f4}
+.goalChevron{width:26px;height:26px;border-radius:9px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;flex:none}
+.goalTitle{font-weight:900;color:var(--navy);font-size:15.5px;letter-spacing:-.01em}
+.goalSub{margin-top:4px;color:var(--muted);font-size:11.5px}
+.progress{height:8px;background:#e5eaf0;border-radius:99px;overflow:hidden}
+.progress span{display:block;height:100%;background:linear-gradient(90deg,#0f766e,#2563eb);border-radius:99px}
+.subList{border-top:1px solid var(--line);background:#fafbfd;padding:9px 13px 13px 48px}
+.subItem{display:grid;grid-template-columns:1.4fr .7fr .8fr auto;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:13px;padding:10px;margin:7px 0;cursor:pointer}
+.subItem:hover{border-color:#a9bccd}
+.subTitle{font-weight:750;color:var(--navy);font-size:13px}
+
+/* ---------- feed / table ---------- */
+.feedItem{display:flex;gap:11px;align-items:flex-start;padding:11px 4px;border-bottom:1px solid var(--soft)}
+.feedItem:last-child{border-bottom:0}
+.feedText{flex:1;font-size:13px}
+.feedMeta{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* ---------- modal / toast ---------- */
+.modalBack{position:fixed;inset:0;background:rgba(4,24,40,.5);display:none;align-items:center;justify-content:center;z-index:50;padding:22px}
+.modalBack.show{display:flex}
+.modal{background:#fff;border-radius:20px;box-shadow:0 28px 80px rgba(0,0,0,.28);width:min(920px,100%);max-height:92vh;overflow:auto;border:1px solid var(--line)}
+.modalHead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:18px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:3}
+.modalHead h2{margin:0;font-size:19px;color:var(--navy)}
+.modalBody{padding:18px 20px}
+.modalFoot{display:flex;justify-content:space-between;gap:10px;padding:14px 20px;border-top:1px solid var(--line);background:#fafbfd;position:sticky;bottom:0}
+.formGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.field label{display:block;font-size:11.5px;color:var(--muted);margin:0 0 5px;font-weight:600}
+.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:11px;padding:9px 10px;background:#fff}
+.field textarea{min-height:80px;resize:vertical}
+.wide{grid-column:1/-1}
+.checkGroup{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:9px;border:1px solid var(--line);border-radius:11px;background:#fafbfd}
+.checkGroup label{display:flex;gap:8px;align-items:center;margin:0;font-size:12.5px;font-weight:500;color:var(--text)}
+.comment{background:#fafbfd;border:1px solid var(--line);border-radius:12px;padding:9px 11px;margin:7px 0}
+.comment .meta{font-size:11px;color:var(--muted);margin-bottom:3px}
+.commentRow{display:flex;gap:8px;margin-top:10px}
+.commentRow input{flex:1;border:1px solid var(--line);border-radius:11px;padding:9px 10px}
+.divider{height:1px;background:var(--line);margin:16px 0}
+.actionsRow{display:flex;gap:8px;flex-wrap:wrap}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--navy);color:#fff;padding:11px 15px;border-radius:13px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.22s;z-index:80;font-size:13px}
+.toast.show{opacity:1;transform:translateY(0)}
+
+@media(max-width:1380px){.myGrid{grid-template-columns:repeat(2,minmax(250px,1fr))}.kpiStrip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:1000px){
+  .app{grid-template-columns:1fr}
+  .sidebar{position:relative;height:auto}
+  .goalHead,.subItem{grid-template-columns:1fr}
+  .formGrid,.checkGroup{grid-template-columns:1fr}
+  .search input{width:100%}
+}
+@media(max-width:680px){.myGrid{grid-template-columns:1fr}.kpiStrip{grid-template-columns:1fr}.mySection{min-height:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">B8</div><div><h1>B8Estate Tasks</h1><p>трекер задач команды</p></div></div>
+    <div class="roleBox">
+      <label>Режим входа</label>
+      <select id="roleSelect" onchange="setRole(this.value)"></select>
+      <div class="roleHint" id="roleHint"></div>
+    </div>
+    <div class="navTitle">Разделы</div>
+    <div class="nav" id="mainNav"></div>
+    <div class="sideFoot" id="sideFoot"></div>
+  </aside>
+  <main class="main"><div id="app"></div></main>
+</div>
+<div class="modalBack" id="modalBack" onclick="if(event.target.id==='modalBack')closeModal()"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+/* ============================== справочники ============================== */
+const STORE_KEY='b8estate_tracker_v1';
+// при первом запуске подхватываем данные из прототипов B8Estate OS, если они есть в этом браузере
+const LEGACY_KEYS=['b8estate_os_v9_my_cabinet_columns','b8estate_os_v8_goals_accordion_roadmap','b8estate_os_v7_color_drag_board','b8estate_os_v6_multi_goals_role_filtered','b8estate_os_v5_roles_goals_materials'];
+
+const roles=[
+  {id:'alina', name:'Алина',  title:'COO',          avatar:'A', hint:'Видны задачи, где Алина ответственная, проверяющая или постановщик: инвестиции, финансы, документы.'},
+  {id:'sergey',name:'Сергей', title:'CEO / CTO',    avatar:'S', hint:'Видны задачи, где Сергей участвует: продукт, разработка, архитектура, релизы.'},
+  {id:'love',  name:'Любовь', title:'CCO',          avatar:'Л', hint:'Видны задачи, где Любовь участвует: брокеры, застройщики, партнеры, переговоры.'},
+  {id:'team',  name:'Команда',title:'общий режим',  avatar:'T', hint:'Общий режим: все задачи и цели проекта без персонального фильтра.'}
+];
+const departments=[
+  {id:'dev',     title:'Разработка',          owner:'sergey'},
+  {id:'invest',  title:'Инвестиции',          owner:'alina'},
+  {id:'builders',title:'Застройщики',         owner:'love'},
+  {id:'brokers', title:'Брокеры',             owner:'love'},
+  {id:'partners',title:'Партнеры-компании',   owner:'love'},
+  {id:'teamdept',title:'Сотрудники и команда',owner:'team'}
+];
+const statuses=[
+  {id:'inbox',   title:'Inbox'},
+  {id:'ready',   title:'Готово к работе'},
+  {id:'progress',title:'В работе'},
+  {id:'review',  title:'На проверке'},
+  {id:'feedback',title:'На доработке'},
+  {id:'done',    title:'Выполнено'}
+];
+const priorities=[
+  {id:'p0',title:'P0 критично',order:0},
+  {id:'p1',title:'P1 важно',order:1},
+  {id:'p2',title:'P2 можно позже',order:2}
+];
+const mainViews=[
+  {id:'my',     icon:'◉', title:'Мой кабинет'},
+  {id:'board',  icon:'▦', title:'Доска задач'},
+  {id:'goals',  icon:'◆', title:'Цели'},
+  {id:'feed',   icon:'≡', title:'Лента активности'},
+  {id:'archive',icon:'✓', title:'Архив'}
+];
+
+/* ============================== helpers ============================== */
+const uid=p=>p+'-'+Math.random().toString(36).slice(2,9)+'-'+Date.now().toString(36).slice(-4);
+const todayISO=()=>new Date().toISOString().slice(0,10);
+const norm=v=>Array.isArray(v)?v.filter(Boolean):(v?[v]:[]);
+const roleById=id=>roles.find(r=>r.id===id)||roles[3];
+const deptById=id=>departments.find(d=>d.id===id)||departments[0];
+const statusTitle=id=>(statuses.find(s=>s.id===id)||{}).title||id;
+const prTitle=id=>(priorities.find(p=>p.id===id)||{}).title||id;
+const prOrder=id=>(priorities.find(p=>p.id===id)||{order:1}).order;
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+function fmtDate(d){if(!d)return '—';try{return new Date(d+'T00:00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'short'})}catch(e){return d}}
+function daysLeft(d){if(!d)return null;return Math.round((new Date(d+'T00:00:00')-new Date(todayISO()+'T00:00:00'))/86400000)}
+
+/* ============================== данные ============================== */
+function taskSeed(dept,title,desc,assignees,reviewers,priority,status,start,due,goalId){
+  return {id:uid('task'),dept,title,desc,assignees:norm(assignees),reviewers:norm(reviewers),priority,status,start,due,goalId,
+    createdBy:'team',result:'',links:[],checklist:[],comments:[],createdAt:todayISO(),updatedAt:todayISO()};
+}
+function goalSeed(title,dept,owners,start,due,target,desc){
+  return {id:uid('goal'),title,dept,owners:norm(owners),start,due,target,status:'Активная',desc,createdAt:todayISO(),updatedAt:todayISO()};
+}
+function defaultState(){
+  const goals=[
+    goalSeed('Привлечь инвестиции 12 млн ₽','invest',['alina','sergey'],'2026-06-09','2026-07-05','12 млн ₽ до 5 июля 2026','Материалы, переговоры, юридическая рамка, оплата.'),
+    goalSeed('Запустить брокерскую систему в пилот','dev',['sergey','love'],'2026-06-09','2026-06-25','5 брокеров в тесте + рабочий сценарий КП','Кабинет брокера, КП клиенту и фокус-группа до состояния реального пилота.'),
+    goalSeed('Первые договоренности с застройщиками','builders',['love','alina'],'2026-06-10','2026-06-30','3 преддоговоренности и рамка комиссии 1%','Список, чек-лист данных, рамка соглашения, первые подтверждения.'),
+    goalSeed('Партнерский контур сервисных компаний','partners',['love'],'2026-06-15','2026-07-10','5 категорий партнеров + условия процента','Обменники, платежи, юристы, сопровождение сделок.')
+  ];
+  return {view:'my',currentUser:'alina',boardDept:'',search:'',lastSaved:'',expandedGoals:{},goals,
+    tasks:[
+      taskSeed('invest','Собрать единый трекер инвесторов','Список инвесторов, стадия, что отправили, следующий шаг, дедлайн follow-up.',['alina'],['team'],'p0','progress','2026-06-09','2026-06-14',goals[0].id),
+      taskSeed('invest','Финализировать оффер на 12 млн ₽','Сколько привлекаем, зачем, на какой срок, что инвестор видит через 6 месяцев.',['alina','sergey'],['team'],'p0','ready','2026-06-10','2026-06-15',goals[0].id),
+      taskSeed('invest','Закрыть юридические вопросы по приему денег','Компания, валюта, счет, договор, порядок оплаты.',['alina'],['sergey'],'p0','inbox','2026-06-12','2026-06-20',goals[0].id),
+      taskSeed('dev','Довести КП для клиента до 100%','Структура КП, блоки объекта, фильтры, нормальная демонстрация клиенту.',['sergey'],['alina','love'],'p0','progress','2026-06-09','2026-06-16',goals[1].id),
+      taskSeed('dev','Подготовить пилот для 5 брокеров','Сценарий теста, доступы, форма обратной связи, критерии успеха.',['sergey','love'],['team'],'p0','ready','2026-06-12','2026-06-22',goals[1].id),
+      taskSeed('brokers','Определить первых 5 брокеров для теста','Кого берем, почему, что проверяет каждый, условия участия.',['love'],['team'],'p0','inbox','2026-06-10','2026-06-17',goals[1].id),
+      taskSeed('builders','Собрать чек-лист данных от застройщика','Объект, документы, комиссия, фото, планировки, leasehold/freehold.',['love','alina'],['sergey'],'p1','progress','2026-06-13','2026-06-24',goals[2].id),
+      taskSeed('builders','Сформировать рамку договоренности на 1%','Что просим, что даем, как фиксируем комиссию.',['alina','love'],['team'],'p0','ready','2026-06-15','2026-06-27',goals[2].id),
+      taskSeed('partners','Разбить сервисных партнеров по категориям','Обменники, платежи, юристы, сопровождение сделок, УК.',['love'],['alina'],'p2','ready','2026-06-15','2026-06-29',goals[3].id)
+    ],
+    activity:[]};
+}
+function normalizeState(s){
+  const d=defaultState();
+  s.view=mainViews.some(v=>v.id===s.view)?s.view:'my';
+  s.currentUser=roles.some(r=>r.id===s.currentUser)?s.currentUser:'alina';
+  s.boardDept=s.boardDept||''; s.search=''; // поиск не персистим
+  s.expandedGoals=(s.expandedGoals&&typeof s.expandedGoals==='object')?s.expandedGoals:{};
+  s.goals=Array.isArray(s.goals)?s.goals:d.goals;
+  s.tasks=Array.isArray(s.tasks)?s.tasks:d.tasks;
+  s.activity=Array.isArray(s.activity)?s.activity:[];
+  s.goals.forEach(g=>{g.owners=norm(g.owners||g.owner);g.dept=g.dept||'invest';g.status=g.status||'Активная';
+    g.start=g.start||todayISO();g.due=g.due||todayISO();g.target=g.target||'';g.desc=g.desc||g.description||''});
+  s.tasks.forEach(t=>{t.dept=t.dept||'invest';t.assignees=norm(t.assignees||t.owner);t.reviewers=norm(t.reviewers||t.reviewer);
+    t.status=statuses.some(x=>x.id===t.status)?t.status:'inbox';t.priority=priorities.some(x=>x.id===t.priority)?t.priority:'p1';
+    t.start=t.start||todayISO();t.due=t.due||t.deadline||todayISO();t.desc=t.desc||t.description||'';
+    t.checklist=Array.isArray(t.checklist)?t.checklist:[];t.comments=Array.isArray(t.comments)?t.comments:[];
+    t.links=Array.isArray(t.links)?t.links:[];t.createdBy=t.createdBy||'team';t.result=t.result||''});
+  return s;
+}
+function loadState(){
+  try{
+    let raw=localStorage.getItem(STORE_KEY);
+    if(!raw){for(const k of LEGACY_KEYS){raw=localStorage.getItem(k);if(raw)break}}
+    return normalizeState(raw?JSON.parse(raw):defaultState());
+  }catch(e){console.error(e);return defaultState()}
+}
+let state=loadState();
+function persist(){state.lastSaved=new Date().toLocaleString('ru-RU');localStorage.setItem(STORE_KEY,JSON.stringify(state))}
+function save(msg){persist();render();if(msg)toast(msg)}
+function logAction(text){state.activity.unshift({id:uid('act'),text,at:new Date().toISOString(),user:state.currentUser});state.activity=state.activity.slice(0,300)}
+
+/* ============================== фильтры ролей ============================== */
+const me=()=>state.currentUser;
+const teamMode=()=>me()==='team';
+const hasUser=(arr,u=me())=>{arr=norm(arr);return arr.includes(u)||arr.includes('team')};
+const taskRelevant=t=>teamMode()||hasUser(t.assignees)||hasUser(t.reviewers)||t.createdBy===me();
+const goalRelevant=g=>teamMode()||hasUser(g.owners)||state.tasks.some(t=>t.goalId===g.id&&taskRelevant(t));
+function matchSearch(t){
+  const q=(state.search||'').trim().toLowerCase();
+  if(!q)return true;
+  const g=state.goals.find(x=>x.id===t.goalId);
+  return (t.title+' '+t.desc+' '+(g?g.title:'')).toLowerCase().includes(q);
+}
+const visibleTasks=()=>state.tasks.filter(taskRelevant).filter(matchSearch);
+function sortTasks(list){
+  return list.slice().sort((a,b)=>prOrder(a.priority)-prOrder(b.priority)||(a.due||'').localeCompare(b.due||''));
+}
+const goalTasks=goalId=>sortTasks(state.tasks.filter(t=>t.goalId===goalId).filter(t=>teamMode()||taskRelevant(t)));
+function goalProgress(goalId){
+  const all=state.tasks.filter(t=>t.goalId===goalId);
+  return all.length?Math.round(all.filter(t=>t.status==='done').length/all.length*100):0;
+}
+
+/* ============================== навигация / shell ============================== */
+function setRole(id){state.currentUser=id;save('Режим: '+roleById(id).name)}
+function setView(id){state.view=id;state.search='';save()}
+function setBoardDept(id){state.boardDept=id;save()}
+function onSearch(v){state.search=v;renderView()}
+function navCount(id){
+  if(id==='my')return visibleTasks().filter(t=>t.status!=='done').length;
+  if(id==='board')return visibleTasks().filter(t=>t.status!=='done').length;
+  if(id==='goals')return state.goals.filter(goalRelevant).length;
+  if(id==='archive')return visibleTasks().filter(t=>t.status==='done').length;
+  return '';
+}
+function render(){
+  document.getElementById('roleSelect').innerHTML=roles.map(r=>`<option value="${r.id}" ${r.id===me()?'selected':''}>${r.name} — ${r.title}</option>`).join('');
+  document.getElementById('roleHint').textContent=roleById(me()).hint;
+  document.getElementById('mainNav').innerHTML=mainViews.map(v=>{const c=navCount(v.id);
+    return `<button class="${state.view===v.id?'active':''}" onclick="setView('${v.id}')"><span>${v.icon}</span>${v.title}${c!==''?`<span class="count">${c}</span>`:''}</button>`}).join('');
+  document.getElementById('sideFoot').innerHTML=`Сохранение: localStorage<br>Последнее: ${esc(state.lastSaved||'демо-данные')}`;
+  renderView();
+}
+function renderView(){
+  const v=state.view;
+  if(v==='my')renderMy(); else if(v==='board')renderBoard(); else if(v==='goals')renderGoals();
+  else if(v==='feed')renderFeed(); else renderArchive();
+}
+function header(title,sub,extra=''){
+  return `<div class="topbar">
+    <h2>${title}</h2><div class="spacer"></div>
+    <div class="search"><input value="${esc(state.search)}" placeholder="Поиск задач…" oninput="onSearch(this.value)"></div>
+    ${extra}
+    <button class="btn primary" onclick="openTaskModal()">+ Задача</button>
+    <button class="btn" title="Скачать резервную копию" onclick="exportJSON()">⤓</button>
+    <button class="btn" title="Импорт JSON" onclick="importJSON()">⤒</button>
+    <p class="sub">${sub}</p>
+  </div>`;
+}
+
+/* ============================== карточка задачи ============================== */
+function peopleAvatars(ids){ids=norm(ids);if(!ids.length)return '<span class="smallText">—</span>';
+  return '<span class="people">'+ids.map(id=>{const r=roleById(id);return `<span class="avatar ${id}" title="${r.name} — ${r.title}">${r.avatar}</span>`}).join('')+'</span>'}
+function dueBadge(t){
+  if(t.status==='done')return '';
+  const d=daysLeft(t.due);
+  if(d===null)return '';
+  if(d<0)return `<span class="badge overdue">просрочено ${-d} дн.</span>`;
+  if(d===0)return `<span class="badge soon">дедлайн сегодня</span>`;
+  if(d<=2)return `<span class="badge soon">осталось ${d} дн.</span>`;
+  return '';
+}
+function taskCard(t,{showStatus=true}={}){
+  const g=state.goals.find(x=>x.id===t.goalId);
+  const cl=t.checklist||[];const clDone=cl.filter(c=>c.done).length;
+  const d=daysLeft(t.due);const dueCls=t.status!=='done'&&d!==null?(d<0?'overdue':d<=2?'soon':''):'';
+  return `<div class="card" draggable="true" data-task-id="${t.id}"
+      ondragstart="dragStart(event,'${t.id}')" ondragend="dragEnd(event)" onclick="cardClick('${t.id}')">
+    <div class="cardTitle">${esc(t.title)}</div>
+    <div class="cardMeta">
+      <span class="badge">${deptById(t.dept).title}</span>
+      <span class="badge ${t.priority}">${prTitle(t.priority)}</span>
+      ${showStatus?`<span class="badge ${t.status}">${statusTitle(t.status)}</span>`:''}
+      ${dueBadge(t)}
+    </div>
+    ${g?`<span class="goalTag">◆ ${esc(g.title)}</span>`:''}
+    ${t.desc?`<p>${esc(t.desc).slice(0,140)}${t.desc.length>140?'…':''}</p>`:''}
+    <div class="cardFooter">
+      <span class="due ${dueCls}">${fmtDate(t.start)} → ${fmtDate(t.due)}</span>
+      ${cl.length?`<span class="checkMini">☑ ${clDone}/${cl.length}</span>`:''}
+      ${peopleAvatars(t.assignees)}
+    </div>
+  </div>`;
+}
+const taskList=list=>list.length?list.map(t=>taskCard(t)).join(''):'<div class="empty">Нет карточек</div>';
+
+/* ============================== Мой кабинет ============================== */
+function renderMy(){
+  const mine=sortTasks(state.tasks.filter(matchSearch).filter(t=>t.status!=='done'&&(teamMode()||hasUser(t.assignees))));
+  const review=sortTasks(state.tasks.filter(matchSearch).filter(t=>t.status==='review'&&(teamMode()||hasUser(t.reviewers))));
+  const created=sortTasks(state.tasks.filter(matchSearch).filter(t=>t.status!=='done'&&(teamMode()?true:t.createdBy===me())));
+  const done=sortTasks(state.tasks.filter(matchSearch).filter(t=>t.status==='done'&&(teamMode()||hasUser(t.assignees)||hasUser(t.reviewers))));
+  const overdue=mine.filter(t=>daysLeft(t.due)<0).length;
+  const kpi=(c,label,num,hint)=>`<div class="kpiCard" style="--c:${c}"><div class="label">${label}</div><div class="num">${num}</div><div class="hint">${hint}</div></div>`;
+  const section=(cls,title,hint,cards)=>`<section class="mySection ${cls}"><h3>${title}</h3><div class="hintLine">${hint}</div>${taskList(cards)}</section>`;
+  document.getElementById('app').innerHTML=header('Мой кабинет',
+    teamMode()?'Общий режим: весь проект без персонального фильтра.':`Персональный экран — ${roleById(me()).name}: ваши задачи, проверки и поставленные карточки.`)+`
+    <div class="kpiStrip">
+      ${kpi('#10b981','Мои задачи',mine.length,overdue?`<b style="color:var(--danger)">${overdue} просрочено</b>`:'все в сроке')}
+      ${kpi('#7c3aed','На проверку',review.length,'ждут вашей обратной связи')}
+      ${kpi('#2563eb','Поставил(а) другим',created.length,'контроль ваших поручений')}
+      ${kpi('#15803d','Выполнено',done.length,'история результата')}
+    </div>
+    <div class="myGrid">
+      ${section('cTasks','Мои задачи','Что вы должны сделать лично или вместе с другими ответственными.',mine)}
+      ${section('cReview','На проверку','Карточки ждут вашу обратную связь. «Команда» приходит всем.',review)}
+      ${section('cCreated','Поставил(а) другим','Задачи, которые вы создали и передали другим.',created)}
+      ${section('cDone','Выполнено','Закрытый результат не теряется — он остается в истории.',done)}
+    </div>
+    <section class="panel" style="margin-top:14px"><h3>Мои цели</h3>${goalsMini(state.goals.filter(goalRelevant))}</section>`;
+}
+function goalsMini(goals){
+  if(!goals.length)return '<div class="empty">Нет целей для выбранного режима</div>';
+  return goals.map(g=>{const p=goalProgress(g.id);
+    return `<div class="card" onclick="openGoalModal('${g.id}')" style="display:grid;grid-template-columns:1.5fr .7fr 1fr auto;gap:12px;align-items:center">
+      <div><div class="cardTitle" style="margin:0">${esc(g.title)}</div><div class="smallText">${deptById(g.dept).title} · ${fmtDate(g.start)} → ${fmtDate(g.due)}</div></div>
+      <div>${peopleAvatars(g.owners)}</div>
+      <div><div class="progress"><span style="width:${p}%"></span></div><div class="smallText">${p}% · ${goalTasks(g.id).length} задач</div></div>
+      <button class="btn small" onclick="event.stopPropagation();openTaskModal(null,{goalId:'${g.id}'})">+ подзадача</button>
+    </div>`}).join('');
+}
+
+/* ============================== Доска ============================== */
+function renderBoard(){
+  const tasks=sortTasks(visibleTasks().filter(t=>!state.boardDept||t.dept===state.boardDept));
+  const chips=`<div class="chips"><button class="chip ${!state.boardDept?'active':''}" onclick="setBoardDept('')">Все отделы</button>`+
+    departments.map(d=>`<button class="chip ${state.boardDept===d.id?'active':''}" onclick="setBoardDept('${d.id}')">${d.title}</button>`).join('')+'</div>';
+  document.getElementById('app').innerHTML=header('Доска задач',
+    'Перетащите карточку в нужную колонку — статус сохранится автоматически. В персональном режиме видны только ваши карточки.')+chips+
+    `<div class="board">${statuses.map(st=>{
+      const col=tasks.filter(t=>t.status===st.id);
+      return `<div class="column" data-status="${st.id}" ondragover="event.preventDefault()" ondragenter="this.classList.add('dropReady')"
+        ondragleave="if(!this.contains(event.relatedTarget))this.classList.remove('dropReady')" ondrop="dropTask(event,'${st.id}')">
+        <div class="columnHeader"><span><i class="dot ${st.id}"></i>${st.title}</span><span class="cnt">${col.length}</span></div>
+        ${col.map(t=>taskCard(t,{showStatus:false})).join('')||'<div class="empty">Пусто</div>'}
+      </div>`}).join('')}</div>`;
+}
+let dragTaskId=null,dragAt=0;
+function dragStart(e,id){dragTaskId=id;dragAt=Date.now();e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',id);e.currentTarget.classList.add('dragging')}
+function dragEnd(e){e.currentTarget.classList.remove('dragging');document.querySelectorAll('.dropReady').forEach(c=>c.classList.remove('dropReady'));setTimeout(()=>{dragTaskId=null},80)}
+function cardClick(id){if(Date.now()-dragAt<250)return;openTaskModal(id)}
+function dropTask(e,newStatus){
+  e.preventDefault();
+  document.querySelectorAll('.dropReady').forEach(c=>c.classList.remove('dropReady'));
+  const id=e.dataTransfer.getData('text/plain')||dragTaskId;
+  const t=state.tasks.find(x=>x.id===id);
+  if(!t||t.status===newStatus)return;
+  const old=t.status;t.status=newStatus;t.updatedAt=todayISO();
+  logAction(`«${t.title}»: ${statusTitle(old)} → ${statusTitle(newStatus)}`);
+  save('Статус: '+statusTitle(newStatus));
+}
+
+/* ============================== Цели ============================== */
+function toggleGoal(id){state.expandedGoals[id]=!state.expandedGoals[id];persist();renderView()}
+function renderGoals(){
+  const goals=state.goals.filter(goalRelevant);
+  document.getElementById('app').innerHTML=header('Цели',
+    'Цель = результат + срок + метрика + ответственные. Клик по цели раскрывает подзадачи и прогресс.',
+    `<button class="btn accent" onclick="openGoalModal()">+ Цель</button>`)+
+    (goals.length?goals.map(g=>{
+      const open=!!state.expandedGoals[g.id];const p=goalProgress(g.id);const tasks=goalTasks(g.id);
+      const d=daysLeft(g.due);
+      return `<div class="goalBox ${open?'open':''}">
+        <div class="goalHead" onclick="toggleGoal('${g.id}')">
+          <div class="goalChevron">${open?'⌄':'›'}</div>
+          <div><div class="goalTitle">${esc(g.title)}</div>
+            <div class="goalSub"><b>Метрика:</b> ${esc(g.target||'не задана')} · ${deptById(g.dept).title} · до ${fmtDate(g.due)}${d!==null&&d<0&&p<100?' · <b style="color:var(--danger)">просрочена</b>':''}</div></div>
+          <div>${peopleAvatars(g.owners)}</div>
+          <div><div class="progress"><span style="width:${p}%"></span></div><div class="smallText">${p}% · ${tasks.length} подзадач</div></div>
+          <div class="actionsRow">
+            <button class="btn small" onclick="event.stopPropagation();openGoalModal('${g.id}')">Открыть</button>
+            <button class="btn small primary" onclick="event.stopPropagation();openTaskModal(null,{goalId:'${g.id}'})">+ подзадача</button>
+          </div>
+        </div>
+        ${open?`<div class="subList">${tasks.length?tasks.map(t=>`
+          <div class="subItem" onclick="openTaskModal('${t.id}')">
+            <div><div class="subTitle">↳ ${esc(t.title)}</div><div class="smallText">${esc(t.desc||'').slice(0,110)}</div></div>
+            <div><span class="badge ${t.status}">${statusTitle(t.status)}</span></div>
+            <div class="smallText">${fmtDate(t.start)} → ${fmtDate(t.due)} ${dueBadge(t)}</div>
+            <div>${peopleAvatars(t.assignees)}</div>
+          </div>`).join(''):'<div class="empty">У цели пока нет подзадач</div>'}</div>`:''}
+      </div>`}).join(''):'<div class="empty">Нет целей для выбранного режима</div>');
+}
+
+/* ============================== Лента / Архив ============================== */
+function renderFeed(){
+  document.getElementById('app').innerHTML=header('Лента активности','Что происходило в трекере: создание, изменения статусов, комментарии.')+
+    `<section class="panel">${state.activity.length?state.activity.slice(0,80).map(a=>{const r=roleById(a.user);
+      return `<div class="feedItem"><span class="avatar ${a.user}">${r.avatar}</span>
+        <div class="feedText">${esc(a.text)}<div class="feedMeta">${r.name} · ${new Date(a.at).toLocaleString('ru-RU')}</div></div></div>`}).join('')
+      :'<div class="empty">Активности пока нет — она появится при работе с задачами</div>'}</section>`;
+}
+function renderArchive(){
+  const done=sortTasks(visibleTasks().filter(t=>t.status==='done'));
+  document.getElementById('app').innerHTML=header('Архив','Выполненные задачи: что сделали, кто сделал и какой результат остался.',
+    `<button class="btn" onclick="downloadCSV()">CSV</button>`)+
+    `<section class="panel"><h3>Выполнено · ${done.length}</h3>${taskList(done)}</section>`;
+}
+function downloadCSV(){
+  const rows=visibleTasks().filter(t=>t.status==='done');
+  const cell=x=>'"'+String(x==null?'':x).replace(/"/g,'""')+'"';
+  const csv=['title,department,assignees,reviewers,start,due,result']
+    .concat(rows.map(t=>[t.title,deptById(t.dept).title,norm(t.assignees).map(i=>roleById(i).name).join('; '),
+      norm(t.reviewers).map(i=>roleById(i).name).join('; '),t.start,t.due,t.result].map(cell).join(','))).join('\n');
+  downloadBlob(csv,'text/csv;charset=utf-8','b8estate_done_'+todayISO()+'.csv');
+}
+
+/* ============================== модалки ============================== */
+const val=id=>{const el=document.getElementById(id);return el?el.value.trim():''};
+const checked=name=>Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(x=>x.value);
+const showModal=()=>document.getElementById('modalBack').classList.add('show');
+const closeModal=()=>document.getElementById('modalBack').classList.remove('show');
+const field=(label,id,value,type='text')=>`<div class="field"><label>${label}</label><input id="${id}" type="${type}" value="${esc(value)}"></div>`;
+const area=(label,id,value,cls='')=>`<div class="field ${cls}"><label>${label}</label><textarea id="${id}">${esc(value)}</textarea></div>`;
+const selectField=(label,id,opts,sel)=>`<div class="field"><label>${label}</label><select id="${id}">${opts.map(o=>`<option value="${o.id}" ${o.id===sel?'selected':''}>${o.title}</option>`).join('')}</select></div>`;
+const roleChecks=(name,selected)=>{selected=norm(selected);
+  return `<div class="checkGroup">${roles.map(r=>`<label><input type="checkbox" name="${name}" value="${r.id}" ${selected.includes(r.id)?'checked':''}> ${r.name} — ${r.title}</label>`).join('')}</div>`};
+
+function openTaskModal(id=null,preset={}){
+  const t=id?state.tasks.find(x=>x.id===id):{
+    title:'',dept:preset.dept||state.boardDept||'invest',goalId:preset.goalId||'',desc:'',
+    assignees:[teamMode()?deptById(preset.dept||state.boardDept||'invest').owner:me()],reviewers:['team'],
+    priority:'p1',status:'inbox',start:todayISO(),due:todayISO(),result:'',checklist:[],comments:[]};
+  if(!t)return;
+  const goalOpts=[{id:'',title:'Без цели'}].concat(state.goals.map(g=>({id:g.id,title:g.title})));
+  document.getElementById('modal').innerHTML=`
+  <div class="modalHead"><div><h2>${id?'Карточка задачи':'Новая задача'}</h2>
+    <div class="smallText">Несколько ответственных и проверяющих — ок. Проверяющий «Команда» = задача на проверку видна всем.</div></div>
+    <button class="btn" onclick="closeModal()">Закрыть</button></div>
+  <div class="modalBody"><div class="formGrid">
+    ${field('Название','fTitle',t.title)}
+    ${selectField('Отдел','fDept',departments,t.dept)}
+    ${selectField('Цель','fGoal',goalOpts,t.goalId||'')}
+    ${selectField('Статус','fStatus',statuses,t.status)}
+    ${selectField('Приоритет','fPriority',priorities,t.priority)}
+    ${field('Старт','fStart',t.start,'date')}
+    ${field('Дедлайн','fDue',t.due,'date')}
+    <div class="field"><label>Ответственные</label>${roleChecks('assignees',t.assignees)}</div>
+    <div class="field"><label>На проверку</label>${roleChecks('reviewers',t.reviewers)}</div>
+    ${area('Описание / ожидаемый результат','fDesc',t.desc,'wide')}
+    ${area('Что сделано (результат исполнителя)','fResult',t.result,'wide')}
+    ${area('Чек-лист: каждая строка — пункт, [x] — выполнено','fChecklist',(t.checklist||[]).map(c=>(c.done?'[x] ':'')+c.text).join('\n'),'wide')}
+  </div>
+  ${id?`<div class="divider"></div><h3 style="margin:0 0 8px;color:var(--navy)">Комментарии</h3>
+    ${(t.comments||[]).map(c=>`<div class="comment"><div class="meta">${roleById(c.user).name} · ${new Date(c.at).toLocaleString('ru-RU')}</div>${esc(c.text)}</div>`).join('')||'<div class="empty">Комментариев пока нет</div>'}
+    <div class="commentRow"><input id="fComment" placeholder="Добавить комментарий"><button class="btn" onclick="addComment('${id}')">Отправить</button></div>`:''}
+  </div>
+  <div class="modalFoot">
+    <div class="actionsRow">${id?`<button class="btn danger" onclick="deleteTask('${id}')">Удалить</button>`:''}</div>
+    <div class="actionsRow"><button class="btn" onclick="closeModal()">Отмена</button>
+      <button class="btn primary" onclick="saveTask('${id||''}')">Сохранить</button></div>
+  </div>`;
+  showModal();
+  setTimeout(()=>document.getElementById('fTitle')?.focus(),50);
+}
+function saveTask(id){
+  const data={title:val('fTitle'),dept:val('fDept'),goalId:val('fGoal'),status:val('fStatus'),priority:val('fPriority'),
+    start:val('fStart'),due:val('fDue'),assignees:checked('assignees'),reviewers:checked('reviewers'),
+    desc:val('fDesc'),result:val('fResult'),
+    checklist:val('fChecklist').split('\n').map(x=>x.trim()).filter(Boolean).map(x=>({text:x.replace(/^\[x\]\s*/i,''),done:/^\[x\]/i.test(x)})),
+    updatedAt:todayISO()};
+  if(!data.title){toast('Название задачи обязательно');return}
+  if(!data.assignees.length)data.assignees=[deptById(data.dept).owner];
+  if(!data.reviewers.length)data.reviewers=['team'];
+  if(id){Object.assign(state.tasks.find(x=>x.id===id),data);logAction('Обновлена задача: '+data.title)}
+  else{state.tasks.push({...data,id:uid('task'),createdBy:me(),createdAt:todayISO(),comments:[],links:[]});logAction('Создана задача: '+data.title)}
+  closeModal();save('Задача сохранена');
+}
+function addComment(id){
+  const t=state.tasks.find(x=>x.id===id);const text=val('fComment');
+  if(!t||!text)return;
+  t.comments.push({id:uid('com'),user:me(),text,at:new Date().toISOString()});t.updatedAt=todayISO();
+  logAction(`Комментарий к «${t.title}»: ${text.slice(0,60)}`);
+  persist();openTaskModal(id);toast('Комментарий добавлен');
+}
+function deleteTask(id){
+  const t=state.tasks.find(x=>x.id===id);
+  if(!t||!confirm('Удалить задачу «'+t.title+'»?'))return;
+  state.tasks=state.tasks.filter(x=>x.id!==id);
+  logAction('Удалена задача: '+t.title);
+  closeModal();save('Задача удалена');
+}
+
+function openGoalModal(id=null){
+  const g=id?state.goals.find(x=>x.id===id):{title:'',dept:'invest',owners:[teamMode()?'alina':me()],start:todayISO(),due:todayISO(),target:'',status:'Активная',desc:''};
+  if(!g)return;
+  document.getElementById('modal').innerHTML=`
+  <div class="modalHead"><div><h2>${id?'Цель':'Новая цель'}</h2>
+    <div class="smallText">Формулировка: результат + дата + метрика. Подзадачи создаются внутри цели.</div></div>
+    <button class="btn" onclick="closeModal()">Закрыть</button></div>
+  <div class="modalBody"><div class="formGrid">
+    ${field('Название цели','gTitle',g.title)}
+    ${selectField('Отдел','gDept',departments,g.dept)}
+    ${field('Старт','gStart',g.start,'date')}
+    ${field('Финальная дата','gDue',g.due,'date')}
+    ${selectField('Статус','gStatus',['Активная','В риске','Завершена','Пауза'].map(s=>({id:s,title:s})),g.status)}
+    <div class="field"><label>Ответственные за цель</label>${roleChecks('gOwners',g.owners)}</div>
+    ${field('Метрика успеха','gTarget',g.target)}
+    ${area('Описание / общий вектор','gDesc',g.desc,'wide')}
+  </div>
+  ${id?`<div class="divider"></div><h3 style="margin:0 0 8px;color:var(--navy)">Подзадачи</h3>${taskList(goalTasks(id))}
+    <button class="btn full" onclick="openTaskModal(null,{goalId:'${id}'})">+ Добавить подзадачу</button>`:''}
+  </div>
+  <div class="modalFoot">
+    <div class="actionsRow">${id?`<button class="btn danger" onclick="deleteGoal('${id}')">Удалить</button>`:''}</div>
+    <div class="actionsRow"><button class="btn" onclick="closeModal()">Отмена</button>
+      <button class="btn primary" onclick="saveGoal('${id||''}')">Сохранить</button></div>
+  </div>`;
+  showModal();
+}
+function saveGoal(id){
+  const data={title:val('gTitle'),dept:val('gDept'),owners:checked('gOwners'),start:val('gStart'),due:val('gDue'),
+    target:val('gTarget'),status:val('gStatus'),desc:val('gDesc'),updatedAt:todayISO()};
+  if(!data.title){toast('Название цели обязательно');return}
+  if(!data.owners.length)data.owners=[deptById(data.dept).owner];
+  if(id){Object.assign(state.goals.find(g=>g.id===id),data);logAction('Обновлена цель: '+data.title)}
+  else{state.goals.push({...data,id:uid('goal'),createdAt:todayISO()});logAction('Создана цель: '+data.title)}
+  closeModal();save('Цель сохранена');
+}
+function deleteGoal(id){
+  if(state.tasks.some(t=>t.goalId===id)){toast('Сначала отвяжите или перенесите подзадачи цели');return}
+  if(!confirm('Удалить цель?'))return;
+  state.goals=state.goals.filter(g=>g.id!==id);
+  closeModal();save('Цель удалена');
+}
+
+/* ============================== экспорт / импорт ============================== */
+function downloadBlob(content,type,name){
+  const blob=new Blob([content],{type});const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download=name;a.click();URL.revokeObjectURL(a.href);
+}
+function exportJSON(){downloadBlob(JSON.stringify(state,null,2),'application/json','b8estate_tracker_'+todayISO()+'.json');toast('Резервная копия скачана')}
+function importJSON(){
+  const inp=document.createElement('input');inp.type='file';inp.accept='.json';
+  inp.onchange=e=>{const f=e.target.files[0];if(!f)return;
+    const r=new FileReader();
+    r.onload=()=>{try{state=normalizeState(JSON.parse(r.result));save('JSON импортирован')}catch(err){toast('Ошибка импорта JSON')}};
+    r.readAsText(f)};
+  inp.click();
+}
+
+/* ============================== глобальные хоткеи ============================== */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeModal();
+  if(e.key==='n'&&!e.metaKey&&!e.ctrlKey&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){e.preventDefault();openTaskModal()}
+});
+function toast(text){const t=document.getElementById('toast');t.textContent=text;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),1800)}
+
+render();
+</script>
+</body>
+</html>
