@@ -83,3 +83,4 @@ Daily 'what I shipped' feed.
 - **2026-09-18** — Artificial artificial intelligence: 500,000 people spent 21 years trai → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7506806623387029505/)
 - **2026-09-26** — The token bunker: how Go.AI raised $85M by selling regulated companies → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7509443473956069376/)
 - **2026-09-27** — The catalog humanoid: how Feather reached a first order in 9 months an → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7510065996154568704/)
+- **2026-09-28** — Your customer got an option on you: how Akamai sold Anthropic $11.6B o → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7510428166314909696/)
