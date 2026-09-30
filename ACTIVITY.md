@@ -84,3 +84,4 @@ Daily 'what I shipped' feed.
 - **2026-09-26** — The token bunker: how Go.AI raised $85M by selling regulated companies → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7509443473956069376/)
 - **2026-09-27** — The catalog humanoid: how Feather reached a first order in 9 months an → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7510065996154568704/)
 - **2026-09-28** — Your customer got an option on you: how Akamai sold Anthropic $11.6B o → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7510428166314909696/)
+- **2026-09-30** — Excel became the investigator: how Databricks bought Row Zero so an AI → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511152923603578880/)
