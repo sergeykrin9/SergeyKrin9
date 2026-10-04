@@ -87,3 +87,4 @@ Daily 'what I shipped' feed.
 - **2026-09-30** — Excel became the investigator: how Databricks bought Row Zero so an AI → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511152923603578880/)
 - **2026-10-02** — The coffin with unit economics: how Photon raised $4.5M, buried apps,  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7511877701025079296/)
 - **2026-10-03** — Agent housing: how Supabase launches 1M databases a week because bots  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7512240091852029952/)
+- **2026-10-04** — GPUs on a smoke break: how Nebius paid $100M to $150M to stop models l → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7512602487359545344/)
