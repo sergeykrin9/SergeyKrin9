@@ -89,3 +89,4 @@ Daily 'what I shipped' feed.
 - **2026-10-03** — Agent housing: how Supabase launches 1M databases a week because bots  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7512240091852029952/)
 - **2026-10-04** — GPUs on a smoke break: how Nebius paid $100M to $150M to stop models l → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7512602487359545344/)
 - **2026-10-06** — Crash-testing the pitch deck: how SafeWorld raised $12.2M while robots → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7513327259550687232/)
+- **2026-10-07** — Silicon barbecue: how Vinci raised $250M because overheating cannot be → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7513716389019430912/)
