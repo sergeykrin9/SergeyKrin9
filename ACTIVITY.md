@@ -91,3 +91,4 @@ Daily 'what I shipped' feed.
 - **2026-10-06** — Crash-testing the pitch deck: how SafeWorld raised $12.2M while robots → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7513327259550687232/)
 - **2026-10-07** — Silicon barbecue: how Vinci raised $250M because overheating cannot be → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7513716389019430912/)
 - **2026-10-08** — Shopaholic on autopilot: how Monid raised $7.7M so your agent can choo → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7514052036158525442/)
+- **2026-10-09** — The junk-drawer humanoid: how PhoneBot puts its body at ~$400 and give → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7514414407267860480/)
