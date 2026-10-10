@@ -92,3 +92,4 @@ Daily 'what I shipped' feed.
 - **2026-10-07** — Silicon barbecue: how Vinci raised $250M because overheating cannot be → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7513716389019430912/)
 - **2026-10-08** — Shopaholic on autopilot: how Monid raised $7.7M so your agent can choo → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7514052036158525442/)
 - **2026-10-09** — The junk-drawer humanoid: how PhoneBot puts its body at ~$400 and give → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7514414407267860480/)
+- **2026-10-10** — The draft under your cap: how Sabi raised $50M to turn your thoughts i → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7514776808160989184/)
