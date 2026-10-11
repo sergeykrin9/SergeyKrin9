@@ -93,3 +93,4 @@ Daily 'what I shipped' feed.
 - **2026-10-08** — Shopaholic on autopilot: how Monid raised $7.7M so your agent can choo → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7514052036158525442/)
 - **2026-10-09** — The junk-drawer humanoid: how PhoneBot puts its body at ~$400 and give → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7514414407267860480/)
 - **2026-10-10** — The draft under your cap: how Sabi raised $50M to turn your thoughts i → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7514776808160989184/)
+- **2026-10-11** — Divorce with a backup folder: how Manus raised more than $500M after i → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7515139193698775040/)
