@@ -96,3 +96,4 @@ Daily 'what I shipped' feed.
 - **2026-10-11** — Divorce with a backup folder: how Manus raised more than $500M after i → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7515139193698775040/)
 - **2026-10-12** — The philosopher at the sorting desk: how Microsoft made Xbox review la → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7515501580050132993/)
 - **2026-10-13** — A signature for the machine: how Blueprints AI automates drawings and  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7515863969773883392/)
+- **2026-10-14** — The lookalike jar: how Albert raised $55M for AI that needs more than  → [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7516226358264614912/)
