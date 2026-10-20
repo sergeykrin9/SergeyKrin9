@@ -24,4 +24,8 @@ I also build websites of varying complexity and work with **Figma** and **pen.de
 | [mcp-servers](https://github.com/sergeykrin9/mcp-servers) | Eight Python MCP server directories for advertising, search analytics, and social publishing |
 | [verify-by-failure](https://github.com/sergeykrin9/verify-by-failure) | A verification workflow for coding agents |
 
+## Learning
+
+- **Claude Code in action** — Anthropic / Claude Academy. Completed 20 October 2026. [Completion badge](https://academy.claude.com/verify/e6863c8c53e08354f6b965c10d53ac99).
+
 [Portfolio](https://putksebe.su/cv) · [LinkedIn](https://www.linkedin.com/in/sergeykrin) · [Email](mailto:sergeykrin98@gmail.com)
